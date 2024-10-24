@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+    
+    <!-- ===================================================================================== -->
+    <!-- |    Launch file to start Gazebo with an IIWA using various controllers.	         | -->
+    
+    <!-- |    It allows to customize the name of the robot, for each robot                   | -->
+    <!-- |	  its topics will be under a nameespace with the same name as the robot's.       | -->
+    <!-- ===================================================================================== -->
+    
+    
+    <!-- Loads the Gazebo world. -->
+    <include file="$(find arm_gazebo)/launch/arm_world.launch"/>
+    
+    <!-- Spawn controllers -->
+    <group ns="arm">
+        <include file="$(find arm_control)/launch/arm_control.launch"/>  
+    </group>
+    
+    
+</launch>
